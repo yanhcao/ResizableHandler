@@ -11,19 +11,13 @@ $ npm i
 Start the dev server,
 
 ```bash
-$ npm start
+$ npm run start
 ```
 
 Build documentation,
 
 ```bash
 $ npm run docs:build
-```
-
-Run test,
-
-```bash
-$ npm test
 ```
 
 Build library via `father-build`,
