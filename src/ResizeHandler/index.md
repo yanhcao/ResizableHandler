@@ -16,7 +16,7 @@ group:
 
 ```jsx
 import React, { useState } from 'react';
-import { ResizeHandler } from './index.tsx';
+import ResizeHandler from './index.tsx';
 
 export default () => {
   return (
@@ -36,7 +36,7 @@ export default () => {
 
 ```jsx
 import React from 'react';
-import { ResizeHandler } from './index.tsx';
+import ResizeHandler from './index.tsx';
 
 export default () => {
   return (
