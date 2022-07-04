@@ -27,7 +27,7 @@ const ResizeHandler: React.FC<Props> = ({
   maxSize,
   className = '',
   resizingDirection = 'row',
-  defaultSize = '50%',
+  defaultSize = '50%'
 }) => {
   const [size, setSize] = useState<string | number>(defaultSize); // 默认宽/高为50%
 
@@ -44,12 +44,12 @@ const ResizeHandler: React.FC<Props> = ({
     if (resizingDirection === 'row') {
       return {
         width: size,
-        height: '100%',
+        height: '100%'
       };
     }
     return {
       width: '100%',
-      height: size,
+      height: size
     };
   }, [size, resizingDirection]);
 
@@ -59,27 +59,27 @@ const ResizeHandler: React.FC<Props> = ({
     if (resizingDirection === 'row') {
       rangeConfig = {
         minWidth: minSize,
-        maxWidth: maxSize,
+        maxWidth: maxSize
       };
       tempStyle = {
         borderRight: '1px solid #e5e5e5',
         paddingRight: '12px',
-        position: 'relative',
+        position: 'relative'
       };
     } else {
       rangeConfig = {
         minHeight: minSize,
-        maxHeight: maxSize,
+        maxHeight: maxSize
       };
       tempStyle = {
         borderBottom: '1px solid #e5e5e5',
         paddingBottom: '12px',
-        position: 'relative',
+        position: 'relative'
       };
     }
     return {
       ...rangeConfig,
-      style: tempStyle,
+      style: tempStyle
     };
   }, [minSize, maxSize, resizingDirection]);
   const rightSize = useMemo(() => {
@@ -96,14 +96,13 @@ const ResizeHandler: React.FC<Props> = ({
         disableDragging={true}
         enableResizing={{
           right: !!secondChildren && resizingDirection === 'row',
-          bottom: !!secondChildren && resizingDirection === 'column',
+          bottom: !!secondChildren && resizingDirection === 'column'
         }}
         size={localStyle}
         onResize={(e, direction, ref) => {
           setSize(resizingDirection === 'column' ? ref.style.height : ref.style.width);
         }}
-        {...otherConfig}
-      >
+        {...otherConfig}>
         {firstChildren}
       </Rnd>
       <div
@@ -112,11 +111,10 @@ const ResizeHandler: React.FC<Props> = ({
           resizingDirection === 'row'
             ? { paddingLeft: '12px', width: rightSize }
             : { paddingTop: '12px', height: rightSize }
-        }
-      >
+        }>
         {secondChildren}
       </div>
     </div>
   );
 };
-export { ResizeHandler };
+export default ResizeHandler;

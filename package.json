@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "ResizableHandler",
+  "name": "ResizeHandler",
   "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
@@ -9,33 +9,17 @@
     "build": "father-build",
     "deploy": "npm run docs:build && npm run docs:deploy",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage",
     "prepublishOnly": "npm run build"
   },
   "module": "es/index.js",
   "typings": "es/index.d.ts",
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
-    ]
-  },
   "dependencies": {
     "react": "^16.12.0",
     "react-rnd": "^10.3.5"
   },
   "devDependencies": {
-    "@umijs/fabric": "^2.8.1",
-    "@umijs/test": "^3.0.5",
     "dumi": "^1.1.0",
     "father-build": "^1.17.2",
-    "prettier": "^2.2.1",
-    "yorkie": "^2.0.0"
+    "prettier": "^2.2.1"
   }
 }

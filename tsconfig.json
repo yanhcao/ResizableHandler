@@ -5,7 +5,6 @@
     "moduleResolution": "node",
     "jsx": "react",
     "esModuleInterop": true,
-    "types": ["jest"],
     "strict": true,
     "skipLibCheck": true,
     "declaration": true
