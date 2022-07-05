@@ -82,6 +82,9 @@ export default () => {
 };
 ```
 
+![image](https://github.com/yanhcao/ResizableHandler/blob/main/src/imgs/basic.png)
+![image](https://github.com/yanhcao/ResizableHandler/blob/main/src/imgs/min%26MaxSize.png)
+
 ## API
 
 ```js
