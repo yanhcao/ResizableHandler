@@ -1,9 +1,3 @@
----
-group:
-  title: 布局
-  order: 1
----
-
 # 分栏拖拽 - ResizeHandler
 
 ## 介绍
@@ -20,14 +14,35 @@ import ResizeHandler from './index.tsx';
 
 export default () => {
   return (
-    <div style={{ width: '100%', height: '300px' }}>
-      <ResizeHandler
-        style={{ border: '1px solid' }}
-        resizingDirection="row"
-        firstChildren="左侧的内容，左侧的内容，左侧的内容，左侧的内容"
-        secondChildren="右侧的内容，右侧的内容，右侧的内容，右侧的内容"
-      />
-    </div>
+    <>
+      <div>横向</div>
+      <div style={{ width: '100%', height: '300px', marginBottom: 20 }}>
+        <ResizeHandler
+          style={{ border: '1px solid rgba(0,0,0,.1)' }}
+          resizingDirection="row"
+          children={[
+            '左侧的内容，左侧的内容，左侧的内容，左侧的内容',
+            '中间的内容',
+            <div style={{ backgroundColor: 'pink' }}>你好hello</div>,
+            '右侧的内容，右侧的内容，右侧的内容，右侧的内'
+          ]}
+        />
+      </div>
+      <div>纵向，带默认size</div>
+      <div style={{ width: '100%', height: '500px' }}>
+        <ResizeHandler
+          style={{ border: '1px solid rgba(0,0,0,.1)' }}
+          resizingDirection="column"
+          defaultSize={[80, '10%', 50]}
+          children={[
+            '左侧的内容，左侧的内容，左侧的内容，左侧的内容',
+            '中间的内容',
+            <div style={{ backgroundColor: 'pink' }}>你好hello</div>,
+            '右侧的内容，右侧的内容，右侧的内容，右侧的内'
+          ]}
+        />
+      </div>
+    </>
   );
 };
 ```
@@ -40,18 +55,22 @@ import ResizeHandler from './index.tsx';
 
 export default () => {
   return (
-    <div style={{ width: '300px', height: '300px' }}>
+    <div style={{ width: '100%', height: '300px', marginBottom: 20 }}>
       <ResizeHandler
-        style={{ border: '1px solid' }}
-        resizingDirection="column"
-        minSize="60px"
-        maxSize="80%"
-        defaultSize="50px"
-        firstChildren="左侧的内容，左侧的内容，左侧的内容，左侧的内容"
-        secondChildren="右侧的内容，右侧的内容，右侧的内容，右侧的内容"
+        style={{ border: '1px solid rgba(0,0,0,.1)' }}
+        resizingDirection="row"
+        minSize={[100, '10%']}
+        maxSize={['50%', 300, 500]}
+        children={[
+          '左侧的内容，左侧的内容，左侧的内容，左侧的内容',
+          '中间的内容',
+          <div style={{ backgroundColor: 'pink' }}>你好hello</div>,
+          '右侧的内容，右侧的内容，右侧的内容，右侧的内'
+        ]}
       />
     </div>
   );
+  return null;
 };
 ```
 
