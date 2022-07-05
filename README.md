@@ -1,5 +1,3 @@
-# ResizableHandler
-
 ## Description
 
 支持多个 div 横向或者纵向拖拽宽度/高度，且支持给每个 div 设置默认宽度/高度，是对于 resize 的一个高级实现。
