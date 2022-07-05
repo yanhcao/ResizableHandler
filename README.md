@@ -1,28 +1,17 @@
 # ResizableHandler
 
-## Getting Started
+## Description
 
-Install dependencies,
+支持多个 div 横向或者纵向拖拽宽度/高度，且支持给每个 div 设置默认宽度/高度，是对于 resize 的一个高级实现。
+![image](https://github.com/yanhcao/ResizableHandler/blob/main/src/imgs/basic.png)
+![image](https://github.com/yanhcao/ResizableHandler/blob/main/src/imgs/min%26MaxSize.png)
+
+## Getting Started
 
 ```bash
 $ npm i
-```
-
-Start the dev server,
-
-```bash
 $ npm run start
-```
-
-Build documentation,
-
-```bash
 $ npm run docs:build
-```
-
-Build library via `father-build`,
-
-```bash
 $ npm run build
 ```
 
@@ -82,9 +71,6 @@ export default () => {
 };
 ```
 
-![image](https://github.com/yanhcao/ResizableHandler/blob/main/src/imgs/basic.png)
-![image](https://github.com/yanhcao/ResizableHandler/blob/main/src/imgs/min%26MaxSize.png)
-
 ## API
 
 ```js
@@ -93,7 +79,7 @@ export default () => {
   resizingDirection?: 'row' | 'column';
   /** dom数组，如果长度为1则不可拖拽 */
   children: React.ReactNode[];
-  /** 每个dom的默认大小，接受数字 or px or 40% 三种类型,方向为row时，作为宽度默认值，方向为column时，作为高度默认值 */
+  /** 每个dom的默认大小，接受数字 or px or 40% 三种类型,方向为row时，作为宽度默认值，方向为column时，作为高度默认值，不传递时默认平均分配宽度/高度 */
   defaultSize?: (string | number)[];
   /** 类型与defaultSize相同，方向为row时，作为宽度最小值，方向为column时，作为高度最小值  */
   minSize?: (string | number)[];

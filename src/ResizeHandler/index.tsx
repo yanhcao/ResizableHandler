@@ -8,7 +8,7 @@ interface Props {
   resizingDirection?: 'row' | 'column';
   /** dom数组，如果长度为1则不可拖拽 */
   children: React.ReactNode[];
-  /** 每个dom的默认大小，接受数字 or px or 40% 三种类型,方向为row时，作为宽度默认值，方向为column时，作为高度默认值 */
+  /** 每个dom的默认大小，接受数字 or px or 40% 三种类型,方向为row时，作为宽度默认值，方向为column时，作为高度默认值，不传递时默认平均分配宽度/高度 */
   defaultSize?: (string | number)[];
   /** 类型与defaultSize相同，方向为row时，作为宽度最小值，方向为column时，作为高度最小值  */
   minSize?: (string | number)[];
@@ -18,12 +18,12 @@ interface Props {
   style?: any;
 }
 const ResizeHandler: React.FC<Props> = ({
-  style = {},
   defaultSize,
   minSize = [],
   maxSize = [],
   children = [],
   className = '',
+  style = {},
   resizingDirection = 'row'
 }) => {
   const [size, setSize] = useState<(string | number)[]>(defaultSize || []); // 默认宽/高为50%
@@ -155,7 +155,6 @@ const ResizeHandler: React.FC<Props> = ({
                 );
                 setSize(newSize);
               }}
-              position={positions[index]}
               {...otherConfig(index)}>
               {item}
             </Rnd>
