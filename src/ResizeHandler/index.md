@@ -55,7 +55,7 @@ import ResizeHandler from './index.tsx';
 
 export default () => {
   return (
-    <div style={{ width: '100%', height: '300px', marginBottom: 20 }}>
+    <div style={{ width: '100%', height: '300px' }}>
       <ResizeHandler
         style={{ border: '1px solid rgba(0,0,0,.1)' }}
         resizingDirection="row"
@@ -70,7 +70,6 @@ export default () => {
       />
     </div>
   );
-  return null;
 };
 ```
 
